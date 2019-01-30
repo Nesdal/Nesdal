@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserView, BrowserWindow} = require('electron')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -9,10 +9,20 @@ function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 800, height: 600})
 
+  let view = new BrowserView({
+    webPreferences: {
+      nodeIntegration: false
+    }
+  })
+
+  mainWindow.setBrowserView(view)
+  view.setBounds({ x: 0, y: 50, width: 400, height: 300 })
+  view.webContents.loadURL('https://mail.google.com/mail/u/0/.org')
+
   mainWindow.setMenu(null);
 
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  mainWindow.loadURL('https://sensedesk-01.ad.sfj.no/default.aspx')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
