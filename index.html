@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Stian Nesdal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+        }
+
+        h2 {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #303030;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            color: #303030;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .jumbotron {
+            background-color: #f4511e;
+            color: #fff;
+            padding: 100px 25px;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .logo-small {
+            color: #f4511e;
+            font-size: 50px;
+        }
+
+        .logo {
+            color: #f4511e;
+            font-size: 200px;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 10px;
+        }
+
+        .carousel-control.right,
+        .carousel-control.left {
+            background-image: none;
+            color: #f4511e;
+        }
+
+        .carousel-indicators li {
+            border-color: #f4511e;
+        }
+
+        .carousel-indicators li.active {
+            background-color: #f4511e;
+        }
+
+        .item h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            font-weight: 400;
+            font-style: italic;
+            margin: 70px 0;
+        }
+
+        .item span {
+            font-style: normal;
+        }
+
+        .panel {
+            border: 1px solid #f4511e;
+            border-radius: 0 !important;
+            transition: box-shadow 0.5s;
+        }
+
+        .panel:hover {
+            box-shadow: 5px 0px 40px rgba(0, 0, 0, .2);
+        }
+
+        .panel-footer .btn:hover {
+            border: 1px solid #f4511e;
+            background-color: #fff !important;
+            color: #f4511e;
+        }
+
+        .panel-heading {
+            color: #fff !important;
+            background-color: #f4511e !important;
+            padding: 25px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        .panel-footer {
+            background-color: white !important;
+        }
+
+        .panel-footer h3 {
+            font-size: 32px;
+        }
+
+        .panel-footer h4 {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .panel-footer .btn {
+            margin: 15px 0;
+            background-color: #f4511e;
+            color: #fff;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #f4511e;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .navbar li a,
+        .navbar .navbar-brand {
+            color: #fff !important;
+        }
+
+        .navbar-nav li a:hover,
+        .navbar-nav li.active a {
+            color: #f4511e !important;
+            background-color: #fff !important;
+        }
+
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #fff !important;
+        }
+
+        footer .glyphicon {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #f4511e;
+        }
+
+        .slideanim {
+            visibility: hidden;
+        }
+
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible;
+        }
+
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+
+        @-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .col-sm-4 {
+                text-align: center;
+                margin: 25px 0;
+            }
+            .btn-lg {
+                width: 100%;
+                margin-bottom: 35px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .logo {
+                font-size: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <a class="navbar-brand" href="#myPage">Heim</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">Om Meg</a></li>
+                    <li><a href="#nesdal">Nesdal</a></li>
+                    <li><a href="#prosjekt">Prosjekt</a></li>
+                    <li><a href="#contact">Ta Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron text-center">
+        <h1>Stian Nesdal</h1>
+        <p>Innehavar av enkeltpersonforetaket <a href="https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=918570357">Nesdal</a></p>
+    </div>
+
+    <div id="about" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>Om meg</h2><br>
+                <h4>Eg heiter Stian Lunde Nesdal, er på veg til å ta dataelektronikar fagbrev med bedrifta sogn og fjordane fylkeskommune kvar eg er plassert på Firda VGS.
+                  <br>
+                  <br>
+                  Eg likar å løyse og lere om både enkle og omfattande problem innan for
+                  programmering og teknologi. På fritida er eg dagleg leiar for NESDAL kvar eg held på å utvikle
+                  forskjellige prosjekt. Om hausten er eg ein aktiv
+                  jeger og eg har gode erfaringar som fotballdommar gjennom fleire år som dommar. Eg er også leder av utviklingen i ungdomsbedrifta <a href="http://simwek25.vevtunet.net/TechtusUB/TechtusUBheimeside.html">techtus ub</a>.
+                  <br>
+                  <br>
+                  Eg likar godt å arbeide sjølvstendig, men likar enda beitre å samarbeid med andre. Eg har
+                  alltid likt å hjelpe dei rundt meg og høyre på andres erfaringar.
+                </h4>
+                <p><strong>Mine sertifikat</strong>
+                    <br> -Førarkort klasse b
+                    <br> -Båtførarbeviset
+                    <br> -Jegerprøven
+                    <br> -Kretsdommarkurs i fotball<br>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <img class="logo" width="100%" src="https://scontent.fosl2-1.fna.fbcdn.net/v/t1.0-9/12109200_989992777730038_4842574614147779118_n.jpg?oh=b8df7a7798d8504b2659a75a2f455244&oe=5A916F60">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-grey" id="nesdal">
+        <div class="row">
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-globe logo slideanim"></span>
+            </div>
+            <div class="col-sm-8">
+                <h2>Om bedrifta Nesdal</h2><br>
+                <h4>Nesdal er eit enkeltpersonforetak som er spesialisert i utvikling og programmering.</h4><br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="prosjekt" class="container-fluid text-center">
+        <h2>Mine prosjekt!</h2>
+        <p></p>
+        <br>
+        <div class="row slideanim">
+            <div class="col-sm-4" onclick="window.location = 'prepay.html'">
+                <img src="/prepay/Prepay_logo.png" class="logo-small">
+                <h4>Prepay</h4>
+                <p>Kantinelausing for å modernisere/digitalisere din kantine</p>
+            </div>
+            <div class="col-sm-4">
+                <img src="https://s3-eu-west-1.amazonaws.com/jotunheimr/prod/Wn/cm/7Q-full.jpg" class="logo-small" style="height: 170px; width: 170px">
+                <h4>SFFK Utlan</h4>
+                <p>Eit beitre utlan system for skulane i SFFK</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-plus logo-small"></span>
+                <h3>Og mykje anna!</h3>
+                <p></p>
+            </div>
+        </div>
+        <br><br>
+    </div>
+
+    <div class="container-fluid bg-grey">
+        <div class="col-sm-8">
+            <h2>Om Techtus UB!</h2>
+            <p>Me er klassen 3DEA frå SogndalVGS og me har start ein ungdomsbedrift som hieter <b>Techtus UB</b>, Me helde til i 1.etasje på elektro. </p><br>
+            <p>Me kan hjelpe deg med masse forskjellige ting som feks.<br><b>Digitalisering</b><br><b>Diverse nettside arbeid</b><br><b>Mobil- og pc-behandling</b><br><b>VenstLANet</b></p>
+            <br>
+            <p>Me er og best på det me driv med!!</p><br>
+        </div>
+        <div class="col-sm-4">
+            <img class="logo-small" width="100%" src="http://simwek25.vevtunet.net/TechtusUB/Bilder/techtuslogoicon.png">
+        </div>
+    </div>
+
+    <div class="container-fluid" id="nesdal">
+        <div class="row">
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-globe logo slideanim"></span>
+            </div>
+            <div class="col-sm-8">
+                <h2>Kva eg kan hjelpe deg eller din bedrift med!</h2><br>
+                <h4>Med mykje erfaringar og ein lidenskap innen teknologi og programmering kan eg hjelpe deg med:<br><br>
+                  -Lage nettsider tilpasset deg<br>
+                  -Lage Appar/program etter behov!<br>
+                  -Konsultering og råd<br>
+                  -Ein hyggleg prat :)
+                </h4><br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="container-fluid bg-grey">
+        <h2 class="text-center">Ta kontakt</h2>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                <p>Ta gjerne kontakt her,</p>
+                <p><span class="glyphicon glyphicon-map-marker"></span> 6863 Leikanger, Norge</p>
+                <p><span class="glyphicon glyphicon-phone"></span> +47 46831064</p>
+                <p><span class="glyphicon glyphicon-envelope"></span> stian.nesdal@google.com</p>
+            </div>
+            <form action="kontaktmeg.php" method="post">
+                <div class="col-sm-6 slideanim">
+                    <p>Eller send meg ein epost direkte fra siden:</p>
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" id="name" name="name" placeholder="Navnet ditt" type="text" required>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" id="email" name="email" placeholder="Epost-addressen din" type="email" required>
+                        </div>
+                    </div>
+                    <textarea class="form-control" id="comments" name="comments" placeholder="Meldingen du vil gje meg! " rows="5"></textarea><br>
+                    <div class="row">
+                        <div class="col-sm-12 form-group">
+                            <button class="btn btn-default pull-right" type="submit" name="kontaktmeg">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+        <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+        <p>Laget av Nesdal</p>
+    </footer>
+
+    <script>
+        $(document).ready(function() {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function() {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+
+            $(window).scroll(function() {
+                $(".slideanim").each(function() {
+                    var pos = $(this).offset().top;
+
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
+    </script>
+
+</body>
+
+</html>
